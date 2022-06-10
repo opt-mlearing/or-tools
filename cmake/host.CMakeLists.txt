@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION 3.14)
 #   NAME
 #     abseil-cpp
 #   URL
-#     https://github.com/abseil/abseil-cpp.git
+#     git@github.com:abseil/abseil-cpp.git
 #   TAG
 #     master
 #   PATCH_COMMAND
@@ -105,7 +105,7 @@ set(protobuf_MSVC_STATIC_RUNTIME OFF)
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.18")
   FetchContent_Declare(
       protobuf
-      GIT_REPOSITORY "https://github.com/protocolbuffers/protobuf.git"
+      GIT_REPOSITORY "git@github.com:protocolbuffers/protobuf.git"
       GIT_TAG "v3.18.0"
       GIT_SUBMODULES ""
       PATCH_COMMAND git apply "${CMAKE_CURRENT_LIST_DIR}/../../../patches/protobuf-v3.18.0.patch"
@@ -114,7 +114,7 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.18")
 else()
   fetch_git_dependency(
       NAME Protobuf
-      REPOSITORY "https://github.com/protocolbuffers/protobuf.git"
+      REPOSITORY "git@github.com:protocolbuffers/protobuf.git"
       TAG "v3.18.0"
       PATCH_COMMAND "git apply \"${CMAKE_CURRENT_LIST_DIR}/../../../patches/protobuf-v3.18.0.patch\""
       SOURCE_SUBDIR cmake)

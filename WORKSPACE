@@ -32,7 +32,7 @@ http_archive(
 git_repository(
     name = "com_google_protobuf",
     commit = "89b14b1",  # release v3.18.0
-    remote = "https://github.com/protocolbuffers/protobuf.git",
+    remote = "git@github.com:protocolbuffers/protobuf.git",
 )
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
@@ -43,7 +43,7 @@ protobuf_deps()
 git_repository(
     name = "com_google_absl",
     commit = "278e0a0", # release 20210324.2
-    remote = "https://github.com/abseil/abseil-cpp.git",
+    remote = "git@github.com:abseil/abseil-cpp.git",
 )
 
 git_repository(
@@ -73,5 +73,5 @@ new_git_repository(
     build_file = "//bazel:scip.BUILD",
     patches = ["//bazel:scip.patch"],
     commit = "6acb7222e1b871041445bee75fc05bd1bcaed089", # master from Jul 19, 2021
-    remote = "https://github.com/scipopt/scip.git",
+    remote = "git@github.com:scipopt/scip.git",
 )

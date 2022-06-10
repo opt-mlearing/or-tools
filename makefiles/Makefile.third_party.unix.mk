@@ -227,7 +227,7 @@ dependencies/install/lib/libprotobuf.a: $(PROTOBUF_SRCDIR) | dependencies/instal
 
 $(PROTOBUF_SRCDIR): patches/protobuf-$(PROTOBUF_TAG).patch | dependencies/sources
 	-$(DELREC) $(PROTOBUF_SRCDIR)
-	git clone --quiet -b $(PROTOBUF_TAG) https://github.com/google/protobuf.git $(PROTOBUF_SRCDIR)
+	git clone --quiet -b $(PROTOBUF_TAG) git@github.com:protocolbuffers/protobuf.git $(PROTOBUF_SRCDIR)
 	cd $(PROTOBUF_SRCDIR) && git apply "$(OR_TOOLS_TOP)/patches/protobuf-$(PROTOBUF_TAG).patch"
 
 # This is needed to find protocol buffers.
@@ -297,7 +297,7 @@ dependencies/install/lib/libabsl.a: dependencies/sources/abseil-cpp-$(ABSL_TAG) 
 
 dependencies/sources/abseil-cpp-$(ABSL_TAG): | dependencies/sources
 	-$(DELREC) dependencies/sources/abseil-cpp-$(ABSL_TAG)
-	git clone --quiet https://github.com/abseil/abseil-cpp.git dependencies/sources/abseil-cpp-$(ABSL_TAG)
+	git clone --quiet git@github.com:abseil/abseil-cpp.git dependencies/sources/abseil-cpp-$(ABSL_TAG)
 	cd dependencies/sources/abseil-cpp-$(ABSL_TAG) && git reset --hard $(ABSL_TAG)
 #	cd dependencies/sources/abseil-cpp-$(ABSL_TAG) && git apply "$(OR_TOOLS_TOP)/patches/abseil-cpp-$(ABSL_TAG).patch"
 
@@ -411,7 +411,7 @@ dependencies/install/lib/libCbc.a: install_cgl $(CBC_SRCDIR)
 
 $(CBC_SRCDIR): | dependencies/sources
 	-$(DELREC) $(CBC_SRCDIR)
-	git clone --quiet -b releases/$(CBC_TAG) https://github.com/coin-or/Cbc.git dependencies/sources/Cbc-$(CBC_TAG)
+	git clone --quiet -b releases/$(CBC_TAG) git@github.com:coin-or/Cbc.git dependencies/sources/Cbc-$(CBC_TAG)
 
 # This is needed to find CBC include files.
 CBC_COIN_DIR = $(firstword $(wildcard $(UNIX_CBC_DIR)/include/cbc/coin \
@@ -450,7 +450,7 @@ dependencies/install/lib/libCgl.a: install_clp $(CGL_SRCDIR)
 
 $(CGL_SRCDIR): | dependencies/sources
 	-$(DELREC) $(CGL_SRCDIR)
-	git clone --quiet -b releases/$(CGL_TAG) https://github.com/coin-or/Cgl.git $(CGL_SRCDIR)
+	git clone --quiet -b releases/$(CGL_TAG) git@github.com:coin-or/Cgl.git $(CGL_SRCDIR)
 
 # This is needed to find CGL include files.
 CGL_COIN_DIR = $(firstword $(wildcard $(UNIX_CGL_DIR)/include/cgl/coin \
@@ -487,7 +487,7 @@ dependencies/install/lib/libClp.a: install_osi $(CLP_SRCDIR)
 
 $(CLP_SRCDIR): | dependencies/sources
 	-$(DELREC) $(CLP_SRCDIR)
-	git clone --quiet -b releases/$(CLP_TAG) https://github.com/coin-or/Clp.git $(CLP_SRCDIR)
+	git clone --quiet -b releases/$(CLP_TAG) git@github.com:coin-or/Clp.git $(CLP_SRCDIR)
 
 # This is needed to find CLP include files.
 CLP_COIN_DIR = $(firstword $(wildcard $(UNIX_CLP_DIR)/include/clp/coin \
@@ -527,7 +527,7 @@ dependencies/install/lib/libOsi.a: install_coinutils $(OSI_SRCDIR)
 
 $(OSI_SRCDIR): | dependencies/sources
 	-$(DELREC) $(OSI_SRCDIR)
-	git clone --quiet -b releases/$(OSI_TAG) https://github.com/coin-or/Osi.git $(OSI_SRCDIR)
+	git clone --quiet -b releases/$(OSI_TAG) git@github.com:coin-or/Osi.git $(OSI_SRCDIR)
 
 # This is needed to find OSI include files.
 OSI_COIN_DIR = $(firstword $(wildcard $(UNIX_OSI_DIR)/include/osi/coin \
@@ -566,7 +566,7 @@ dependencies/install/lib/libCoinUtils.a: $(COINUTILS_SRCDIR) | \
 
 $(COINUTILS_SRCDIR): | dependencies/sources
 	-$(DELREC) $(COINUTILS_SRCDIR)
-	git clone --quiet -b releases/$(COINUTILS_TAG) https://github.com/coin-or/CoinUtils.git $(COINUTILS_SRCDIR)
+	git clone --quiet -b releases/$(COINUTILS_TAG) git@github.com:coin-or/CoinUtils.git $(COINUTILS_SRCDIR)
 
 # This is needed to find COINUTILS include files.
 COINUTILS_COIN_DIR = $(firstword $(wildcard $(UNIX_COINUTILS_DIR)/include/coinutils/coin \
@@ -650,7 +650,7 @@ dependencies/install/lib/libscip.a: $(SCIP_SRCDIR) | dependencies/install
 
 $(SCIP_SRCDIR): | dependencies/sources
 	-$(DELREC) $(SCIP_SRCDIR)
-	git clone --quiet -b $(SCIP_TAG) https://github.com/scipopt/scip.git $(SCIP_SRCDIR)
+	git clone --quiet -b $(SCIP_TAG) git@github.com:scipopt/scip.git $(SCIP_SRCDIR)
 #	cd $(SCIP_SRCDIR) && git apply --ignore-whitespace "$(OR_TOOLS_TOP)/patches/scip-$(SCIP_TAG).patch"
 
 

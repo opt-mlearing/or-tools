@@ -65,7 +65,7 @@ if(BUILD_absl)
   set(ABSL_ENABLE_INSTALL ON)
   FetchContent_Declare(
     absl
-    GIT_REPOSITORY "https://github.com/abseil/abseil-cpp.git"
+    GIT_REPOSITORY "git@github.com:abseil/abseil-cpp.git"
     GIT_TAG "20210324.2"
     PATCH_COMMAND git apply "${CMAKE_CURRENT_LIST_DIR}/../../patches/abseil-cpp-20210324.2.patch")
   FetchContent_MakeAvailable(absl)
@@ -93,7 +93,7 @@ if(BUILD_SCIP)
   set(SYM "none" CACHE STRING "Scip param")
   FetchContent_Declare(
     scip
-    GIT_REPOSITORY https://github.com/scipopt/scip.git
+    GIT_REPOSITORY git@github.com:scipopt/scip.git
     GIT_TAG        master
   )
   FetchContent_MakeAvailable(scip)
@@ -115,7 +115,7 @@ if(BUILD_Protobuf)
   if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.18")
     FetchContent_Declare(
       protobuf
-      GIT_REPOSITORY "https://github.com/protocolbuffers/protobuf.git"
+      GIT_REPOSITORY "git@github.com:protocolbuffers/protobuf.git"
       GIT_TAG "v3.18.0"
       GIT_SUBMODULES ""
       PATCH_COMMAND git apply "${CMAKE_CURRENT_LIST_DIR}/../../patches/protobuf-v3.18.0.patch"
@@ -124,7 +124,7 @@ if(BUILD_Protobuf)
   else()
     fetch_git_dependency(
       NAME Protobuf
-      REPOSITORY "https://github.com/protocolbuffers/protobuf.git"
+      REPOSITORY "git@github.com:protocolbuffers/protobuf.git"
       TAG "v3.18.0"
       PATCH_COMMAND "git apply \"${CMAKE_CURRENT_LIST_DIR}/../../patches/protobuf-v3.18.0.patch\""
       SOURCE_SUBDIR cmake
@@ -145,7 +145,7 @@ if(BUILD_CoinUtils)
   list(APPEND CMAKE_MESSAGE_INDENT "  ")
   FetchContent_Declare(
     CoinUtils
-    GIT_REPOSITORY "https://github.com/Mizux/CoinUtils.git"
+    GIT_REPOSITORY "git@github.com:coin-or/CoinUtils.git"
     GIT_TAG "stable/2.11")
   FetchContent_MakeAvailable(CoinUtils)
   list(POP_BACK CMAKE_MESSAGE_INDENT)
@@ -160,7 +160,7 @@ if(BUILD_Osi)
   list(APPEND CMAKE_MESSAGE_INDENT "  ")
   FetchContent_Declare(
     Osi
-    GIT_REPOSITORY "https://github.com/Mizux/Osi.git"
+    GIT_REPOSITORY "git@github.com:coin-or/Osi.git"
     GIT_TAG "stable/0.108")
   FetchContent_MakeAvailable(Osi)
   list(POP_BACK CMAKE_MESSAGE_INDENT)
@@ -175,7 +175,7 @@ if(BUILD_Clp)
   list(APPEND CMAKE_MESSAGE_INDENT "  ")
   FetchContent_Declare(
     Clp
-    GIT_REPOSITORY "https://github.com/Mizux/Clp.git"
+    GIT_REPOSITORY "git@github.com:coin-or/Clp.git"
     GIT_TAG "stable/1.17.4")
   FetchContent_MakeAvailable(Clp)
   list(POP_BACK CMAKE_MESSAGE_INDENT)
@@ -190,7 +190,7 @@ if(BUILD_Cgl)
   list(APPEND CMAKE_MESSAGE_INDENT "  ")
   FetchContent_Declare(
     Cgl
-    GIT_REPOSITORY "https://github.com/Mizux/Cgl.git"
+    GIT_REPOSITORY "git@github.com:coin-or/Cgl.git"
     GIT_TAG "stable/0.60")
   FetchContent_MakeAvailable(Cgl)
   list(POP_BACK CMAKE_MESSAGE_INDENT)
@@ -205,7 +205,7 @@ if(BUILD_Cbc)
   list(APPEND CMAKE_MESSAGE_INDENT "  ")
   FetchContent_Declare(
     Cbc
-    GIT_REPOSITORY "https://github.com/Mizux/Cbc.git"
+    GIT_REPOSITORY "git@github.com:coin-or/Cbc.git"
     GIT_TAG "stable/2.10")
   FetchContent_MakeAvailable(Cbc)
   list(POP_BACK CMAKE_MESSAGE_INDENT)

@@ -275,7 +275,7 @@ dependencies/install/lib/libprotobuf.lib: $(PROTOBUF_SRCDIR) install_zlib
 
 $(PROTOBUF_SRCDIR): | dependencies/sources
 	-$(DELREC) $(PROTOBUF_SRCDIR)
-	git clone --quiet -b $(PROTOBUF_TAG) https://github.com/protocolbuffers/protobuf.git $(PROTOBUF_SRCPATH)
+	git clone --quiet -b $(PROTOBUF_TAG) git@github.com:protocolbuffers/protobuf.git $(PROTOBUF_SRCPATH)
 	cd $(PROTOBUF_SRCPATH) && git apply "$(OR_TOOLS_TOP)\patches\protobuf-$(PROTOBUF_TAG).patch"
 
 PROTOBUF_INC = /I"$(WINDOWS_PROTOBUF_PATH)\\include"
@@ -327,7 +327,7 @@ dependencies/install/lib/absl.lib: dependencies/sources/abseil-cpp-$(ABSL_TAG) |
 
 dependencies/sources/abseil-cpp-$(ABSL_TAG): | dependencies/sources
 	-$(DELREC) dependencies/sources/abseil-cpp-$(ABSL_TAG)
-	git clone --quiet https://github.com/abseil/abseil-cpp.git dependencies\sources\abseil-cpp-$(ABSL_TAG)
+	git clone --quiet git@github.com:abseil/abseil-cpp.git dependencies\sources\abseil-cpp-$(ABSL_TAG)
 	cd dependencies\sources\abseil-cpp-$(ABSL_TAG) && git reset --hard $(ABSL_TAG)
 # cd dependencies\sources\abseil-cpp-$(ABSL_TAG) && git apply "$(OR_TOOLS_TOP)\patches\abseil-cpp-$(ABSL_TAG).patch"
 
@@ -490,7 +490,7 @@ dependencies/install/lib/libscip.lib: $(SCIP_SRCDIR)
 
 $(SCIP_SRCDIR): | dependencies/sources
 	-$(DELREC) $(SCIP_SRCDIR)
-	git clone --quiet -b $(SCIP_TAG) https://github.com/scipopt/scip.git $(SCIP_SRCPATH)
+	git clone --quiet -b $(SCIP_TAG) git@github.com:scipopt/scip.git $(SCIP_SRCPATH)
 #	cd $(SCIP_SRCPATH) && git apply "$(OR_TOOLS_TOP)\patches\scip-$(SCIP_TAG).patch"
 
 $(GEN_DIR)/ortools/linear_solver/lpi_glop.cc: $(SCIP_SRCDIR) | $(GEN_DIR)/ortools/linear_solver

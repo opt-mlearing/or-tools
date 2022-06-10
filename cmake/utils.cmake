@@ -70,7 +70,7 @@ endfunction()
 #   NAME
 #     abseil-cpp
 #   URL
-#     https://github.com/abseil/abseil-cpp.git
+#     git@github.com:abseil/abseil-cpp.git
 #   TAG
 #     master
 #   PATCH_COMMAND
